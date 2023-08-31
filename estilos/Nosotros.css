@@ -1,0 +1,497 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+/* Encabezado */
+
+header{
+    height: 100px;
+    background: rgb(84, 3, 19);
+    padding: 0 50px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.titulo{
+    text-transform: uppercase;
+    font-weight: 200;
+}
+.menu a{
+    color:#fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0 10px;
+    transition: 0.4s;
+}
+
+.mostrar-menu,
+.esconder-menu{
+    font-size:30px;
+    cursor: pointer;
+    display: none;
+    transition: 0.4s;
+}
+
+.mostrar-menu{
+    order:1;
+}
+
+.menu a:hover,
+.mostrar-menu:hover,
+.esconder-menu:hover{
+    color: #6cc091;
+}
+
+#check{
+    display: none;
+}
+
+/* responsividad */
+
+@media(max-width: 768px){
+    .mostrar-menu,
+    .esconder-menu{
+        display: block;
+    }
+
+    .menu{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: rgb(65, 3, 3);
+        right: -100%;
+        top: 0;
+        text-align: center;
+        padding: 100px 0px;
+        z-index: 100;
+        transition: 0.8s;
+    }
+    .menu a{
+        display: block;
+        padding: 20px;
+    }
+    .esconder-menu{
+        position: absolute;
+        top:40px;
+        right:40px;
+    }
+    #check:checked ~ .menu{
+        right:0;
+    }
+}
+
+:root{
+    --red:crimson;
+    --black:#252a34;
+    --blue:darkblue;
+    --white:#eaeaea;
+    --title:35px;
+    --text:19px;
+ }
+ 
+ body{
+     background: #ffff;
+     overflow-x: hidden;
+
+ }
+ .go-top{
+     position: fixed;
+     bottom: 100px;
+     right: -100%;
+     width: 50px;
+     height: 50px;
+     background: #fff;
+     border:2px solid var(--red);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     cursor: pointer;
+     z-index: 1000;
+     transition: 0.5s;
+ }
+ .go-top:hover{
+     background: var(--red);
+     color:#fff;
+     border: 2px solid var(--white);
+ }
+ .go-top:hover span{color:var(--white);}
+ 
+ .go-top > span{
+    font-size: 30px;
+    color: var(--black);
+ }
+ 
+ 
+ /** Skew **/
+ .skew-abajo{
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     border-width: 0 0 10vh 100vw;
+     border-style: solid;
+     border-color: transparent transparent #fff transparent;
+ }
+ .skew-arriba{
+     position: absolute;
+     top: 0;
+     left: 0;
+     border-width: 10vh 100vw 0 0;
+     border-style: solid;
+     border-color: #fff transparent transparent transparent;
+     z-index: 10;
+ }
+ 
+ /** Acerca de Nosotros **/
+ .acerca-de{
+     width: 100%;
+     margin-top: 80px;
+ }
+ .acerca-de .info-container{
+     width: 80%;
+     margin:auto;
+     display: flex;
+     justify-content: center;
+     flex-direction: column;
+ }
+ .acerca-de .info-container h1{
+     font-size: 50px;
+     font-weight: 400;
+     color: var(--black);
+     text-align: center;
+     margin-bottom: 20px;
+ }
+ .acerca-de .info-container p{
+     text-align: center;
+     font-size: 17px;
+     color: var(--black);
+     line-height: 35px;
+     margin:10px 0px;
+ }
+ .acerca-de .info-container .about-gallery{
+     width: 100%;
+     display: flex;
+     justify-content: center;
+     margin: 50px 0px;
+ }
+ .acerca-de .info-container .about-gallery img{
+     width: calc(33.333% - 10px);
+     height: 300px;
+     margin: 10px 10px;
+     object-fit: cover;
+     border-radius: 10px;
+     cursor: pointer;
+ }
+ .acerca-de .info-container .about-more{
+     width: 100%;
+     display: flex;
+     justify-content: center;
+ }
+ .acerca-de .info-container .about-more button{
+     width: 120px;
+     height: 40px;
+     text-align: center;
+     line-height: 40px;
+     font-size: 20px;
+     background: var(--red);
+     border: none;
+     outline: none;
+     border-radius: 20px;
+     color: #fff;
+     cursor: pointer;
+     transition: 0.5s;
+ }
+ .acerca-de .info-container .about-more button:hover{background: var(--blue);}
+ 
+ @media only screen and (max-width:773px){
+     .acerca-de .info-container .about-gallery{flex-direction: column;}
+     .acerca-de .info-container .about-gallery img{width: 100%;}
+ }
+ @media only screen and (max-width:590px){
+     .acerca-de .info-container h1{font-size: 30px;}
+     .acerca-de .info-container p{font-size: 15px;}
+ }
+ 
+ /** Nuestros proyectos **/
+ .our-projects{
+     position: relative;
+     width: 100%;
+     height: 100%; 
+     background: url(./Img/Encabezado/Logo.png);
+     background-attachment:fixed;
+     background-position: center;
+     background-size: cover;
+     margin-top: 100px;
+ }
+ .our-projects .deg-background{
+     position:absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background:rgba(0,0,0,0.8);
+ }
+ .our-projects .ejeZproject{
+     position: relative;
+     width: 100%;
+     height: 100%;
+ }
+ .our-projects .container-project{
+     width: 90%;
+     margin:auto;
+     padding-top: 100px;
+ }
+ .our-projects .container-project .project-title{
+     border:2px solid #fff;
+     padding:10px;
+     text-align: center;
+     width: 50%;
+     margin: auto;
+ }
+ .our-projects .container-project .project-title h2{
+     font-size: 40px;
+     color: #fff;
+     font-weight: normal;
+ }
+ .our-projects .container-project .project-title hr{
+    background:#fff;
+    width: 50%;
+    height: 3px;
+    margin: 10px auto;
+ }
+ .our-projects .container-project .project-img{
+     width: 100%;
+     display: flex;
+     justify-content: center;
+     flex-wrap: wrap;
+     margin-top: 80px;
+     padding-bottom: 100px;
+ }
+ .our-projects .container-project .project-img img{
+   width: calc(15% - 10px);
+   margin:10px;
+   object-fit: cover;
+   border-radius: 10px;
+   cursor: pointer;
+ }
+ @media only screen and (max-width:773px){
+     .our-projects .container-project .project-img img{width: 80%; margin-bottom: 30px;}
+ }
+ @media only screen and (max-width:446px){
+     .our-projects .container-project .project-title h2{font-size: 30px;}
+ }
+ 
+ /** Testimonios **/
+ .testimonios{
+     width: 100%;
+     margin-top: 120px;
+ }
+ .testimonios .testimonios-title{
+     width: 50%;
+     margin:auto;
+     text-align: center;
+ }
+ .testimonios .testimonios-title h2{
+     font-size: 50px;
+     font-weight: normal;
+     color: var(--black);
+     margin-bottom: 10px;
+ }
+ .testimonios .testimonios-title hr{
+     width: 60%;
+     height: 2px;
+     margin:auto;
+     background: var(--black);
+ }
+ .testimonios .box-testimonio{
+     width: 90%;
+     margin: 80px auto;
+     display: flex;
+     justify-content: center;
+     flex-wrap: wrap;
+ }
+ .testimonios .box-testimonio .card-testimonio{
+     width: 45%;
+     margin: 20px;
+ }
+ .testimonios .box-testimonio .card-testimonio .card-img{
+     display: flex;
+     justify-content: center;
+     margin-bottom: 30px;
+ }
+ .testimonios .box-testimonio .card-testimonio .card-img img{
+     width: 250px;
+     height: 250px;
+     border-radius: 10%;
+     object-fit: cover;
+     cursor: pointer;
+ }
+ .testimonios .box-testimonio .card-testimonio .testimonio-text{
+     border: 2px solid var(--red);
+     padding:20px;
+     border-radius: 20px;
+     transition: 0.1s;
+     cursor: pointer;
+ }
+ .testimonios .box-testimonio .card-testimonio .testimonio-text h4{
+     font-size: 30px;
+     font-weight: 400;
+     color: var(--red);
+     text-align: center;
+     margin-bottom: 10px;
+     transition: 0.1s;
+ }
+ .testimonios .box-testimonio .card-testimonio .testimonio-text p{
+     font-size: 20px;
+     text-align: center;
+     line-height: 40px;
+     color: var(--black);
+ }
+ .testimonios .box-testimonio .card-testimonio .testimonio-text:hover{
+     border: 2px solid var(--blue);
+ }
+ .testimonios .box-testimonio .card-testimonio .testimonio-text:hover h4{
+     color: var(--blue);
+ }
+ 
+ @media only screen and (max-width:890px){
+     .testimonios .box-testimonio .card-testimonio .card-img img{width: 400px; height: 400px;}
+     .testimonios .box-testimonio .card-testimonio{width: 100%;}
+     .testimonios .box-testimonio .card-testimonio .testimonio-text h4{font-size: 25px;}
+     .testimonios .box-testimonio .card-testimonio .testimonio-text p{font-size: 17px; line-height: 35px;}
+ }
+
+.h1{
+    font-family: Escolar;
+    src: url(Escolar.ttf);
+}
+
+
+/* Footer */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body{
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  footer {
+    display: table;
+    width: 100%;
+    height: 13vh;
+    background-color: #111;
+    color:#fff;
+    text-align: center;
+  
+  }
+  
+  .footer-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #111;
+    text-align: center;
+  }
+  .footer-content h3{
+    font-size: 2.1rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    line-height: 3rem;
+  }
+  .footer-content p{
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;
+    color: #cacdd2;
+  }
+  .socials{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+  }
+  .socials li{
+    margin: 0 10px;
+  }
+  .socials a{
+    text-decoration: none;
+    color: #fff;
+    border: 1.1px solid white;
+    padding: 5px;
+  
+    border-radius: 50%;
+  
+  }
+  .socials a i{
+    font-size: 1.1rem;
+    width: 20px;
+  
+  
+    transition: color .4s ease;
+  
+  }
+  .socials a:hover i{
+    color: aqua;
+  }
+  
+  .footer-bottom{
+    background: #111;
+    width: 100vw;
+    padding: 20px;
+  padding-bottom: 40px;
+    text-align: center;
+  }
+  .footer-bottom p{
+  float: left;
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+  }
+  .footer-bottom p a{
+  color:#44bae8;
+  font-size: 16px;
+  text-decoration: none;
+  }
+  .footer-bottom span{
+    text-transform: uppercase;
+    opacity: .4;
+    font-weight: 200;
+  }
+  .footer-menu{
+  float: right;
+  
+  }
+  .footer-menu ul{
+  display: flex;
+  }
+  .footer-menu ul li{
+  padding-right: 10px;
+  display: block;
+  }
+  .footer-menu ul li a{
+  color: #cfd2d6;
+  text-decoration: none;
+  }
+  .footer-menu ul li a:hover{
+  color: #27bcda;
+  }
+  
+  @media (max-width:500px) {
+  .footer-menu ul{
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  }
+  }
+  

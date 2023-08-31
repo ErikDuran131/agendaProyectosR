@@ -1,0 +1,119 @@
+.wrap{
+    width: 86vw;
+    max-width: 90%;
+    margin: 30px auto;
+}
+
+ul.tabs{
+    width: 100%;
+    background-color: #363636;
+    list-style: none;
+    display: flex;
+}
+
+ul.tabs li{
+    width: 18%;
+}
+
+ul.tabs li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    text-align: center;
+
+    display: block;
+    padding: 20px 0px;
+
+}
+
+.active{
+    background-color: #0984CC;
+}
+
+ul.tabs li a .tab-text{
+    margin-left: 8px;
+}
+
+.secciones{
+    width: 100%;
+    background: #fff;
+}
+
+.secciones article{
+    padding: 30px;
+}
+
+.toggle {
+    cursor: pointer;
+    display: inline-block;
+  }
+  
+  .toggle-switch {
+    display: inline-block;
+    background: #ccc;
+    border-radius: 16px;
+    width: 58px;
+    height: 32px;
+    position: relative;
+    vertical-align: middle;
+    transition: background 0.25s;
+  }
+  .toggle-switch:before, .toggle-switch:after {
+    content: "";
+  }
+  .toggle-switch:before {
+    display: block;
+    background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    transition: left 0.25s;
+  }
+  .toggle:hover .toggle-switch:before {
+    background: linear-gradient(to bottom, #fff 0%, #fff 100%);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
+  }
+  .toggle-checkbox:checked + .toggle-switch {
+    background: #56c080;
+  }
+  .toggle-checkbox:checked + .toggle-switch:before {
+    left: 30px;
+  }
+  
+  .toggle-checkbox {
+    position: absolute;
+    visibility: hidden;
+  }
+  
+  .toggle-label {
+    margin-left: 5px;
+    position: relative;
+    top: 2px;
+  }
+
+@media screen and (max-width: 700px) {
+    ul.tabs li{
+        width: none;
+        flex-basis: 0;
+        flex-grow: 1;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    ul.tabs li a{
+        padding: 15px 0px;
+    }
+
+    ul.tabs li a .tab-text{
+        display: none;
+    }
+
+    .secciones article{
+        padding:20px;
+    }
+}
+
